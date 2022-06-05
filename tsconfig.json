@@ -1,0 +1,15 @@
+{
+    "include": ["src/**.*"],
+    "compilerOptions": {
+        "outDir": "./dist",
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "noImplicitAny": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node"
+    }
+}
