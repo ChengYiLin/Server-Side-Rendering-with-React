@@ -1,6 +1,28 @@
-# Node.JS Express with TypeScript Template
+# Server Side Rendering with React
+
+## Skills Stack
+
+Language
+
+-   TypeScripts
+-   EJS
+
+Framework & Library
+
+-   React
+-   Express
+
+Others
+
+-   Webpack 5
+-   EsLint
+-   Prettier
 
 ## Reference
+
+Server Side Rendering
+
+-   [Server Side Rendering with React and Redux](https://www.udemy.com/course/server-side-rendering-with-react-and-redux/)
 
 Webpack Setting
 
