@@ -1,18 +1,20 @@
 const path = require("path");
 const dotenv = require("dotenv");
 const nodeExternals = require("webpack-node-externals");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 dotenv.config();
 
 module.exports = {
+    name: "server",
     entry: "./src/index.ts",
     mode: process.env.ENV || "development",
     target: "node", // in order to ignore built-in modules like path, fs, etc.
     externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"],
@@ -28,6 +30,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new CopyPlugin({
             patterns: [{ from: "./src/views", to: "./views" }],
         }),
