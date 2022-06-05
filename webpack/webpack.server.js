@@ -3,31 +3,19 @@ const dotenv = require("dotenv");
 const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const { merge } = require("webpack-merge");
+const baseConfig = require("./webpack.base.js");
 
 dotenv.config();
 
-module.exports = {
+const serverConfig = {
     name: "server",
     entry: "./src/index.ts",
-    mode: process.env.ENV || "development",
     target: "node", // in order to ignore built-in modules like path, fs, etc.
     externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "../dist"),
         filename: "[name].bundle.js",
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json"],
-    },
-    module: {
-        rules: [
-            {
-                // Include ts, tsx, js, and jsx files.
-                test: /\.(ts|js)x?$/,
-                exclude: /node_modules/,
-                loader: "babel-loader",
-            },
-        ],
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -36,3 +24,5 @@ module.exports = {
         }),
     ],
 };
+
+module.exports = merge(baseConfig, serverConfig);
