@@ -4,7 +4,7 @@
     "description": "Implement the Server Side Rendering with React and Express",
     "private": true,
     "scripts": {
-        "dev": "yarn run dev:client:build & yarn run dev:server:build & yarn run dev:server:run",
+        "dev": "yarn run dev:client:build & yarn run dev:server:build",
         "dev:client:build": "webpack --config ./webpack/webpack.client.js --watch",
         "dev:server:build": "webpack --config ./webpack/webpack.server.js --watch",
         "dev:server:run": "nodemon --watch dist --exec \"node dist/main.bundle.js\""
