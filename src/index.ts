@@ -13,7 +13,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", page.home);
+app.use("/", page);
 
 app.listen(port, () => {
     console.log(`[server]: Server is running 1at http://localhost:${port}`);

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Home: React.FunctionComponent = () => {
+const Home: FC = () => {
     return (
         <div>
             <h1>Home Page</h1>

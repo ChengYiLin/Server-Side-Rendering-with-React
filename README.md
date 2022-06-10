@@ -9,7 +9,8 @@ Language
 
 Framework & Library
 
--   React
+-   React 18
+-   React Router - V6
 -   Express
 
 Others
@@ -23,6 +24,7 @@ Others
 Server Side Rendering
 
 -   [Server Side Rendering with React and Redux](https://www.udemy.com/course/server-side-rendering-with-react-and-redux/)
+-   [React-Router : Server Side Rendering](https://reactrouter.com/docs/en/v6/guides/ssr)
 
 Webpack Setting
 

@@ -1,7 +1,3 @@
-import home from "./home";
-
-const page = {
-    home,
-};
+import page from "./page";
 
 export { page };
