@@ -10,7 +10,7 @@ dotenv.config();
 
 const serverConfig = {
     name: "server",
-    entry: "./src/index.ts",
+    entry: "./server/index.ts",
     target: "node", // in order to ignore built-in modules like path, fs, etc.
     externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
     output: {
@@ -20,7 +20,7 @@ const serverConfig = {
     plugins: [
         new CleanWebpackPlugin(),
         new CopyPlugin({
-            patterns: [{ from: "./src/views", to: "./views" }],
+            patterns: [{ from: "./server/views", to: "./views" }],
         }),
     ],
 };

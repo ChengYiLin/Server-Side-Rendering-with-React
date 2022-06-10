@@ -1,5 +1,5 @@
 {
-    "include": ["src/**.*"],
+    "include": ["server/**.*"],
     "compilerOptions": {
         "outDir": "./dist",
         "module": "es6",
