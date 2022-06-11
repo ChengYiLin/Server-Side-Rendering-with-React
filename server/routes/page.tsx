@@ -3,7 +3,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import PageRoutes from "../../client/route";
-import { getClientBundleJS } from "../utilities/getClientBundle";
+import { getClientBundleJS } from "../provider/getClientBundle";
 
 const router = express.Router();
 
