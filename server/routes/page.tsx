@@ -4,19 +4,32 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import PageRoutes from "../../client/route";
 import { getClientBundleJS } from "../provider/getClientBundle";
+import { ServerStyleSheet } from "styled-components";
 
 const router = express.Router();
 
 router.get("*", (req, res) => {
-    const component = renderToString(
-        <StaticRouter location={req.path}>
-            <PageRoutes />
-        </StaticRouter>
-    );
+    const sheet = new ServerStyleSheet();
 
-    const clientBundleJS = getClientBundleJS();
+    try {
+        const component = renderToString(
+            sheet.collectStyles(
+                <StaticRouter location={req.path}>
+                    <PageRoutes />
+                </StaticRouter>
+            )
+        );
 
-    res.render("index", { component, clientBundleJS });
+        const styledComponentsSSR = sheet.getStyleTags();
+
+        const clientBundleJS = getClientBundleJS();
+
+        res.render("index", { component, clientBundleJS, styledComponentsSSR });
+    } catch (error) {
+        console.log(error);
+    } finally {
+        sheet.seal();
+    }
 });
 
 export default router;

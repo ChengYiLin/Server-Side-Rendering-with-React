@@ -1,9 +1,15 @@
 import React, { FC } from "react";
+import styled from "styled-components";
+
+const Title = styled.h1`
+    font-size: 3rem;
+    color: red;
+`;
 
 const Hi: FC = () => {
     return (
         <div>
-            <h1>This is Hi Page</h1>
+            <Title>This is Hi Page</Title>
         </div>
     );
 };
