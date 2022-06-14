@@ -11,6 +11,7 @@ Framework & Library
 
 -   React 18
 -   React Router - V6
+-   Styled Components
 -   Express
 
 Others
