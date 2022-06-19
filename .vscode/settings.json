@@ -7,5 +7,7 @@
     "editor.codeActionsOnSave": {
         "source.formatDocument": true,
         "source.fixAll.eslint": true
-    }
+    },
+    // For Ejs Validation Error
+    "html.validate.scripts": false
 }

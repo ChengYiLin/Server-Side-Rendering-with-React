@@ -7,6 +7,10 @@
     </head>
     <body>
         <div id="root"><%- component %></div>
+        <script>
+            // Redux Server Side Initial State
+            window.__PRELOADED_STATE__ = <%- JSON.stringify(preloadedState).replace(/</g, '\\u003c') %>;
+        </script>
         <script src="<%= clientBundleJS %>"></script>
     </body>
 </html>
