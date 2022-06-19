@@ -1,13 +1,14 @@
 import React, { FC } from "react";
-// import { useSelector, useDispatch } from "react-redux";
+// import { useAppDispatch, useAppSelector } from "../hooks/useRedux";
 
 const User: FC = () => {
-    // const user = useSelector((state) => state.counter.value);
-    // const dispatch = useDispatch();
+    // const user = useAppSelector((state) => state.user.userName);
+    // const dispatch = useAppDispatch();
 
     return (
         <div>
             <h1>User Page</h1>
+            <p>User Name : {"user"}</p>
         </div>
     );
 };
