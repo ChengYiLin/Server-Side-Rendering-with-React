@@ -7,6 +7,7 @@
         "dev": "run-p dev:watch:server dev:start:server",
         "dev:watch:server": "webpack --config ./webpack/webpack.server.js --mode=development --watch",
         "dev:start:server": "nodemon ./dist/app.bundle.js",
+        "dev:watch:client": "webpack --config ./webpack/webpack.client.js --mode=development --watch",
         "prod:build": "webpack --mode=production",
         "lint": "prettier --write --ignore-unknown ."
     },
