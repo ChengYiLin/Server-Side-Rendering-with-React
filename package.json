@@ -1,0 +1,62 @@
+{
+    "name": "node.js-express-with-typescript-template",
+    "version": "1.0.0",
+    "description": "Node.js Express with TypeScript",
+    "main": "app.bundle.js",
+    "scripts": {
+        "dev": "run-p dev:watch:server dev:start:server",
+        "dev:watch:server": "webpack --mode=development --watch",
+        "dev:start:server": "nodemon ./dist/app.bundle.js",
+        "prod:build": "webpack --mode=production",
+        "lint": "prettier --write --ignore-unknown ."
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.21.3",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/preset-typescript": "^7.21.0",
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.17",
+        "@types/node": "^18.15.3",
+        "@types/react": "^18.0.28",
+        "@types/react-dom": "^18.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.55.0",
+        "@typescript-eslint/parser": "^5.55.0",
+        "babel-loader": "^9.1.2",
+        "body-parser": "^1.20.2",
+        "copy-webpack-plugin": "^11.0.0",
+        "cors": "^2.8.5",
+        "eslint": "^8.36.0",
+        "nodemon": "^2.0.21",
+        "npm-run-all": "^4.1.5",
+        "prettier": "2.8.4",
+        "typescript": "^4.9.5",
+        "webpack": "^5.76.1",
+        "webpack-cli": "^5.0.1",
+        "webpack-dev-server": "^4.12.0",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "nodemonConfig": {
+        "watch": [
+            "dist"
+        ],
+        "ext": "js,.env"
+    },
+    "author": "Cheng Yi Lin",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ChengYiLin/Node.js-Express-with-TypeScript-Template.git"
+    },
+    "keywords": [
+        "Node.js",
+        "TypeScript",
+        "Express"
+    ],
+    "license": "ISC"
+}
