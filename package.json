@@ -5,7 +5,7 @@
     "main": "app.bundle.js",
     "scripts": {
         "dev": "run-p dev:watch:server dev:start:server",
-        "dev:watch:server": "webpack --mode=development --watch",
+        "dev:watch:server": "webpack --config ./webpack/webpack.server.js --mode=development --watch",
         "dev:start:server": "nodemon ./dist/app.bundle.js",
         "prod:build": "webpack --mode=production",
         "lint": "prettier --write --ignore-unknown ."
@@ -40,6 +40,7 @@
         "webpack": "^5.76.1",
         "webpack-cli": "^5.0.1",
         "webpack-dev-server": "^4.12.0",
+        "webpack-merge": "^5.8.0",
         "webpack-node-externals": "^3.0.0"
     },
     "nodemonConfig": {
