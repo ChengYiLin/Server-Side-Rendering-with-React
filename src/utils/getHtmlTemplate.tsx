@@ -6,9 +6,7 @@ function getHtmlTemplate(componentHtmlString: string) {
                 <title>Document</title>
             </head>
             <body>
-                <div id="root">
-                    ${componentHtmlString}
-                </div>
+                <div id="root">${componentHtmlString}</div>
                 <script src="/static/client.bundle.js"></script>
             </body>
         </html>

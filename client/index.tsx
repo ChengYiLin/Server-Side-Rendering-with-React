@@ -6,5 +6,4 @@ import App from './app';
 // ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 // 👉 Hydration
-const root = ReactDOM.hydrateRoot(document.getElementById('root'), <App />);
-root.render(<App />);
+ReactDOM.hydrateRoot(document.getElementById('root'), <App />);
