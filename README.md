@@ -10,12 +10,19 @@ Framework & Library
 
 -   React 18
 -   Express
+-   Styled-Components
 
 Others
 
 -   Webpack 5
 -   EsLint
 -   Prettier
+
+## PPT
+
+![Google Slides](/docs/slide.png)
+
+Google Slide : [Link](https://docs.google.com/presentation/d/1xlTqbrIY0fdiFZwzZkttuhGwojgrYbtYPRO2SS7Xe1A/edit?usp=sharing)
 
 ## Reference
 
