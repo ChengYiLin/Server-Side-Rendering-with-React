@@ -1,16 +1,10 @@
 import React from 'react';
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/Home';
+import App from './app';
 
-const root = document.querySelector('#root');
+// 👉 Render
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
-if (root) {
-    ReactDOM.createRoot(root).render(
-        <StrictMode>
-            <Home />
-        </StrictMode>,
-    );
-} else {
-    alert('Can not find root element');
-}
+// 👉 Hydration
+const root = ReactDOM.hydrateRoot(document.getElementById('root'), <App />);
+root.render(<App />);

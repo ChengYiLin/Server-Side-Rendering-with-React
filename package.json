@@ -4,11 +4,13 @@
     "description": "Node.js Express with TypeScript",
     "main": "app.bundle.js",
     "scripts": {
-        "dev": "run-p dev:watch:server dev:start:server",
+        "dev": "run-p dev:watch:server dev:watch:client start:server",
         "dev:watch:server": "webpack --config ./webpack/webpack.server.js --mode=development --watch",
-        "dev:start:server": "nodemon ./dist/app.bundle.js",
         "dev:watch:client": "webpack --config ./webpack/webpack.client.js --mode=development --watch",
-        "prod:build": "webpack --mode=production",
+        "prod:build": "run-s prod:build:server prod:build:client",
+        "prod:build:server": "webpack  --config ./webpack/webpack.server.js --mode=production",
+        "prod:build:client": "webpack  --config ./webpack/webpack.client.js --mode=production",
+        "start:server": "nodemon ./dist/app.bundle.js",
         "lint": "prettier --write --ignore-unknown ."
     },
     "dependencies": {

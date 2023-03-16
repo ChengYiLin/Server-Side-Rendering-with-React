@@ -6,7 +6,7 @@ const clientConfig = {
     name: 'client',
     entry: './client/index.tsx',
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../public'),
         filename: 'client.bundle.js',
     },
 };
