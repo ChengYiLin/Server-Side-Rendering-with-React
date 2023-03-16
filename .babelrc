@@ -1,7 +1,21 @@
 {
     "presets": [
-        "@babel/preset-typescript",
+        [
+            "@babel/preset-typescript",
+            {
+                "isTSX": true,
+                "allExtensions": true
+            }
+        ],
         "@babel/preset-react",
         "@babel/preset-env"
+    ],
+    "plugins": [
+        [
+            "babel-plugin-styled-components",
+            {
+                "ssr": true
+            }
+        ]
     ]
 }

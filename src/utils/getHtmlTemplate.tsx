@@ -1,9 +1,10 @@
-function getHtmlTemplate(componentHtmlString: string) {
+function getHtmlTemplate(componentHtmlString: string, styleTags: string) {
     const htmlString = `
         <!DOCTYPE html>
         <html>
             <head>
                 <title>Document</title>
+                ${styleTags}
             </head>
             <body>
                 <div id="root">${componentHtmlString}</div>

@@ -6,6 +6,7 @@ import path from 'path';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import getHtmlTemplate from './utils/getHtmlTemplate';
 import App from '../client/app';
 
@@ -26,11 +27,27 @@ app.use('/static', express.static('public'));
  * Route Setting
  */
 app.get('/', (req: Request, res: Response) => {
-    const pageComponent = renderToString(<App />);
-    const htmlString = getHtmlTemplate(pageComponent);
+    let pageComponent = '';
+    let styleTags = '';
+    const sheet = new ServerStyleSheet();
+
+    try {
+        pageComponent = renderToString(
+            <StyleSheetManager sheet={sheet.instance}>
+                <App />
+            </StyleSheetManager>,
+        );
+        styleTags = sheet.getStyleTags();
+    } catch (error) {
+        console.error(error);
+    } finally {
+        sheet.seal();
+    }
+
+    const htmlTemplate = getHtmlTemplate(pageComponent, styleTags);
 
     res.setHeader('Content-Type', 'text/html');
-    res.send(htmlString);
+    res.send(htmlTemplate);
 });
 
 /**

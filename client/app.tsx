@@ -1,12 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
-import styled from './style.module.css';
+import cssModuleStyled from './style.module.css';
+import styled from 'styled-components';
+
+const Title = styled.div`
+    font-size: 32px;
+    color: blue;
+`;
 
 export default function App() {
     return (
         <>
             <h1>Hello, world!</h1>
-            <p className={styled.textRed}>Using CSS Module</p>
+            <Title>Title from styled-components</Title>
+            <p className={cssModuleStyled.textRed}>Using CSS Module</p>
             <Counter />
         </>
     );
