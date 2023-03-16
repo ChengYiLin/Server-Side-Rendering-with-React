@@ -1,4 +1,8 @@
-function getHtmlTemplate(componentHtmlString: string, styleTags: string) {
+function getHtmlTemplate(
+    componentHtmlString: string,
+    styleTags: string,
+    initData: string,
+) {
     const htmlString = `
         <!DOCTYPE html>
         <html>
@@ -8,6 +12,12 @@ function getHtmlTemplate(componentHtmlString: string, styleTags: string) {
             </head>
             <body>
                 <div id="root">${componentHtmlString}</div>
+                <script>
+                    window.__SERVER_DATA__  = ${initData.replace(
+                        /</g,
+                        '\\u003c',
+                    )}
+                </script>
                 <script src="/static/client.bundle.js"></script>
             </body>
         </html>

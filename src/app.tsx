@@ -7,6 +7,7 @@ import path from 'path';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import fetchAPI from './services';
 import getHtmlTemplate from './utils/getHtmlTemplate';
 import App from '../client/app';
 
@@ -26,15 +27,18 @@ app.use('/static', express.static('public'));
 /**
  * Route Setting
  */
-app.get('/', (req: Request, res: Response) => {
+app.get('/', async (req: Request, res: Response) => {
     let pageComponent = '';
     let styleTags = '';
-    const sheet = new ServerStyleSheet();
 
+    let fetchApiData = await fetchAPI();
+    const initData = JSON.stringify(fetchApiData);
+
+    const sheet = new ServerStyleSheet();
     try {
         pageComponent = renderToString(
             <StyleSheetManager sheet={sheet.instance}>
-                <App />
+                <App serverData={fetchApiData} />
             </StyleSheetManager>,
         );
         styleTags = sheet.getStyleTags();
@@ -44,7 +48,7 @@ app.get('/', (req: Request, res: Response) => {
         sheet.seal();
     }
 
-    const htmlTemplate = getHtmlTemplate(pageComponent, styleTags);
+    const htmlTemplate = getHtmlTemplate(pageComponent, styleTags, initData);
 
     res.setHeader('Content-Type', 'text/html');
     res.send(htmlTemplate);
