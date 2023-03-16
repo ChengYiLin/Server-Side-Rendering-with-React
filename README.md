@@ -5,14 +5,10 @@
 Language
 
 -   TypeScripts
--   EJS
 
 Framework & Library
 
 -   React 18
--   React Router - V6
--   Redux
--   Styled Components
 -   Express
 
 Others
@@ -25,6 +21,7 @@ Others
 
 Server Side Rendering
 
+-   [React Beta Docs](https://beta.reactjs.org/)
 -   [Server Side Rendering with React and Redux](https://www.udemy.com/course/server-side-rendering-with-react-and-redux/)
 -   [React-Router : Server Side Rendering](https://reactrouter.com/docs/en/v6/guides/ssr)
 -   [Styled Components : Server Side Rendering](https://styled-components.com/docs/advanced#server-side-rendering)
